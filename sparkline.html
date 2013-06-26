@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+body {
+  font: 10px 'M+ 1m';
+  font-weight:100;
+  background:#121212;
+}
+
+path.line {
+    stroke-width:1;
+    stroke:#21cf2c;
+}
+</style>
+<body>
+<div id='radial'></div>
+<script src="d3.v3.min.js"></script>
+<script src="sparkline.js"></script>
+<script>
+window.setInterval(function() {
+d3.select('#radial').datum(d3.range(10).map(function() {
+    return Math.random();
+})).call(sparkline().interpolate('step'));
+}, 1000);
+</script>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+body {
+  font: 10px 'M+ 1m';
+  font-weight:100;
+  background:#121212;
+}
+
+.out-of {
+    fill:#222;
+}
+
+.out-of.on {
+    fill:#eee;
+}
+</style>
+<body>
+<div id='radial'></div>
+<script src="d3.v3.min.js"></script>
+<script src="outof.js"></script>
+<script>
+function go() {
+    d3.select('#radial').datum((~~(100 * Math.random()))).call(outof().margin({
+        top:20,
+        left:20,
+        bottom:20,
+        right:20
+    }).max(100).width(500).height(500));
+}
+window.setInterval(go, 1000);
+// go();
+</script>

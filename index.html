@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+body {
+  font: 10px 'M+ 1m';
+  font-weight:100;
+  background:#121212;
+}
+
+path.rim {
+    stroke:#456763;
+    stroke-width:0.5;
+    fill:none;
+}
+
+
+path.interval {
+    stroke:#f7f3f5;
+    stroke-width:0.5;
+    fill:none;
+}
+
+circle.hr, circle.hr-inner {
+    fill:#c3feff;
+}
+
+text.hr-label {
+    fill:#ced5d3;
+}
+
+.event text {
+    fill:#ced5d3;
+}
+
+.event circle {
+    fill:#ced5d3;
+}
+
+.beacon {
+    fill:#f59423;
+}
+
+text.beacon-text {
+  font: 12px 'M+ 1mn';
+    fill:#f59423;
+}
+
+</style>
+<body>
+<div id='radial'></div>
+<script src="d3.v3.min.js"></script>
+<script src="events-radial.js"></script>
+<script>
+d3.select('#radial').datum({
+    events: [{
+        id: 'test',
+        name: 'Foo',
+        date: new Date(+new Date() - 1000)
+    }]
+}).call(eventsRadial());
+</script>
